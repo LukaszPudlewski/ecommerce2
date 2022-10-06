@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import Announcement from '../components/Announcement';
+import Navbar from '../components/Navbar';
 import { mobile } from '../responsive';
 
 const Container = styled.div`
@@ -64,6 +66,9 @@ const ButtonDiv = styled.div`
 
 const Login = () => {
   return (
+    <div>
+    <Announcement />
+    <Navbar />  
     <Container>
         <Wrapper>
             <Title>CREATE AN ACCOUNT</Title>
@@ -80,6 +85,7 @@ const Login = () => {
             </Form>
         </Wrapper>
     </Container>
+    </div>
   )
 }
 

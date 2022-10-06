@@ -8,6 +8,7 @@ import {
     Twitter,
   } from "@material-ui/icons";
   import { mobile } from '../responsive';
+import { Link } from 'react-router-dom';
 
   const Container = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ const SocialContainer = styled.div`
   display: flex;
 `;
 
-const SocialIcon = styled.div`
+const SocialIcon = styled.a`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -41,6 +42,7 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 const Center = styled.div`
@@ -64,6 +66,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 
 const Right = styled.div`
@@ -80,7 +83,13 @@ const ContactItem = styled.div`
 
 const Payment = styled.img`
     width: 50%;
+    cursor: pointer;
 `;
+
+const linkStyle = {
+  textDecoration: "none",
+  color: 'black'
+};
 
 const Footer = () => {
   return (
@@ -88,16 +97,16 @@ const Footer = () => {
         <Left>
             <Logo>COOL SHOP LOGO</Logo>
             <Desc>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                You can find us there
             </Desc>
             <SocialContainer>
-                <SocialIcon color="3B5999">
+                <SocialIcon href="google.com" target="_blank" color="3B5999">
                     <Facebook />
                 </SocialIcon>
-                <SocialIcon color="E4405F">
+                <SocialIcon href="google.com" target="_blank" color="E4405F">
                     <Instagram />
                 </SocialIcon>
-                <SocialIcon color="55ACEE">
+                <SocialIcon href="google.com" target="_blank" color="55ACEE">
                     <Twitter />
                 </SocialIcon>
             </SocialContainer>
@@ -114,7 +123,7 @@ const Footer = () => {
           <ListItem>Order Tracking</ListItem>
           <ListItem>Wishlist</ListItem>
           <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
+          <ListItem>Terms</ListItem>          
         </List>
       </Center>
       <Right>

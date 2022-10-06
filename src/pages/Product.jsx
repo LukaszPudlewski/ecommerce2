@@ -1,4 +1,7 @@
 import { Add, Remove } from "@material-ui/icons";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -115,6 +118,24 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  
+
   return (
     <Container>
       <Navbar />
@@ -136,9 +157,9 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              <FilterColor onClick={() => setColor("black")}color="black" />
+              <FilterColor onClick={() => setColor("darkblue")} color="darkblue" />
+              <FilterColor onClick={() => setColor("gray")} color="gray" />
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
@@ -153,11 +174,15 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+            <Remove onClick={() => handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+              <Link to={`/cart/`}>
+            <Button>
+              ADD TO CART
+            </Button>
+              </Link>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

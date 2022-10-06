@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Announcement from "../components/Announcement";
+import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
@@ -77,8 +79,11 @@ const Link = styled.a`
 
 const Login = () => {
   return (
+    <div>
+    <Announcement />  
+    <Navbar />
     <Container>
-      <Wrapper>
+      <Wrapper>        
         <Form>
           <Title>SIGN IN</Title>
           <Input placeholder="username" />
@@ -89,6 +94,7 @@ const Login = () => {
         </Form>
       </Wrapper>
     </Container>
+    </div>
   );
 };
 
