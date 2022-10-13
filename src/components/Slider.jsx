@@ -12,6 +12,9 @@ display: flex;
 position: relative;
 overflow: hidden;
 ${mobile({ display: "none" })}
+@media screen and (max-width: 700px) {
+  margin-top: 50px;
+}
 `
 
 const Arrow = styled.div`

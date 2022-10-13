@@ -14,6 +14,9 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 ${mobile({ height: "20vh" })}
+@media screen and (max-width: 700px) {
+  height: 20vh;
+}
 `
 const Info = styled.div`
 position: absolute;

@@ -13,6 +13,9 @@ import { Link } from 'react-router-dom';
   const Container = styled.div`
   display: flex;
   ${mobile({ flexDirection: "column" })}
+  @media screen and (max-width: 700px) {
+  flex-direction: column;
+}
 `;
 
 const Left = styled.div`
@@ -49,6 +52,9 @@ const Center = styled.div`
   flex: 1;
   padding: 20px;
   ${mobile({ display: "none" })}
+  @media screen and (max-width: 700px) {
+  display: none;
+}
 `;
 
 const Title = styled.h3`

@@ -9,6 +9,10 @@ display: flex;
 padding: 20px;
 justify-content: space-between;
 ${mobile({ padding: "0px", flexDirection:"column" })}
+@media screen and (max-width: 700px) {
+  padding: 0px;
+  flex-direction: column;
+}
 `
 
 const Categories = () => {

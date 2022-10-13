@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     height: 60px;
-    ${mobile({ height: "100px" })}
+    ${mobile({ height: "50px"})}
 `
 
 const Wrapper = styled.div`
@@ -15,6 +15,7 @@ padding: 10px 20px;
 display: flex;
 justify-content: space-between;
 align-items: center;
+max-width: 100vw;
 ${mobile({ padding: "10px 0px" })}
 `
 
@@ -22,6 +23,10 @@ const Left = styled.div`
 flex: 1;
 display: flex;
 align-items: center;
+${mobile({ flex: 0, display: "none", visibility: "hidden" })}
+@media screen and (max-width: 700px) {
+  display: none;
+}
 `
 const Language = styled.span`
   font-size: 14px;
@@ -37,7 +42,7 @@ const SearchContainer = styled.div`
 `
 const Input = styled.input`
   border: none;
-  ${mobile({ width: "50px" })}
+  ${mobile({ display: "none" })}
 `
 
 const Center = styled.div`
@@ -78,7 +83,7 @@ const Navbar = () => {
                 <Input/>
                 <Search/>
               </SearchContainer>
-            </Left>
+            </Left> 
             <Center>
               <Link to={`/`} style={linkStyle}>
               <Logo>
